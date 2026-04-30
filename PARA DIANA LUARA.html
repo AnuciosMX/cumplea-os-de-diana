@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARA DIANA LAURA ♡</title>
+    <style>
+        :root {
+            --neon-pink: #ff2d75;
+            --rose-gold: #f4a4a4;
+            --bg: #050505;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #1a0a0f 0%, #050505 100%);
+            z-index: 1;
+        }
+
+        .card {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 420px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(244, 164, 164, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 30px rgba(255, 45, 117, 0.1);
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .scanner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neon-pink);
+            box-shadow: 0 0 15px var(--neon-pink);
+            animation: scan 3s linear infinite;
+            z-index: 11;
+        }
+
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--rose-gold);
+            text-shadow: 0 0 10px rgba(244, 164, 164, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: var(--neon-pink);
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .stats {
+            text-align: left;
+            font-size: 13px;
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--neon-pink);
+            line-height: 1.6;
+        }
+
+        .btn-action {
+            width: 100%;
+            padding: 18px;
+            background: transparent;
+            border: 2px solid var(--neon-pink);
+            color: var(--neon-pink);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 2px;
+            font-size: 14px;
+            border-radius: 50px;
+        }
+
+        .btn-action:hover {
+            background: var(--neon-pink);
+            color: white;
+            box-shadow: 0 0 40px var(--neon-pink);
+        }
+
+        /* Mensaje Sorpresa Expandido */
+        #surprise {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            max-width: 500px;
+            z-index: 100;
+            text-align: center;
+            animation: zoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        #surprise h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 0 20px var(--neon-pink);
+            margin-bottom: 15px;
+        }
+
+        .message-content {
+            font-size: 14px;
+            background: rgba(10, 10, 15, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--rose-gold);
+            line-height: 1.8;
+            max-height: 70vh;
+            overflow-y: auto;
+            text-align: justify;
+        }
+
+        .highlight-text {
+            color: var(--rose-gold);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="card" id="main-card">
+        <div class="scanner"></div>
+        <h1>DIANA LAURA RAMOS SALGADO </h1>
+        <div class="subtitle">ESTO ES PARA TI, DE PARTE DE TU PRIMO...</div>
+        <div class="stats">
+           • <b>ALINEACIÓN:</b> Corazón inclinado al éxito.<br>
+            • <b>ESTADO SUB-OCCIPITAL:</b> Pensando en grande.<br>
+            • <b>VERTEBRAS DETECTADAS:</b> 23 niveles de fuerza.<br>
+            • <b>NIVEL DE "CRACK":</b> Experta en romper barreras....
+        </div>
+        <p style="font-size: 13px; color: #eee;">
+            A veces el tiempo corre más rápido de lo que quisiéramos. DA CLIC.
+        </p>
+        <button class="btn-action" onclick="showGift()">REGALO SORPRESA</button>
+    </div>
+
+    <div id="surprise">
+        <h2>¡FELICIDADES, DIANA! 🥳</h2>
+        <div class="message-content">
+           "¿En qué momento dejamos de soñar con el futuro para empezar a extrañar el pasado? Hoy, al cumplir 23, quizás sientas un nudo en la garganta al darte cuenta de que la vida ya no es un juego. Se siente ese vacío de los que ya no están, de los momentos que se volvieron solo recuerdos y de las promesas que el tiempo se llevó. Crecer ha sido, en gran parte, aprender a decir adiós: adiós a versiones de ti que amabas, adiós a la seguridad de no tener que ser fuerte, y adiós a la idea de que siempre habría alguien para resolverlo todo.
+
+Sé que hay heridas en tu alma que aún no terminan de cerrar, y que a veces te miras al espejo buscando a esa Diana que no conocía el dolor. Pero quiero que sepas que esas grietas son por donde ahora sale tu luz. Has aprendido a caminar con el corazón remendado, a ser tu propio refugio y a dar amor incluso cuando el mundo no te devolvió lo mismo.
+
+No estás sola en este proceso de convertirte en quien estás destinada a ser. Cada lágrima que has derramado ha regado la mujer increíble, valiente y profunda que eres hoy. Los 23 son un recordatorio de que estás viva, de que has superado tormentas que juraste que te hundirían y que, a pesar de todo, sigues teniendo la capacidad de amar y de soñar. Llora todo lo que necesites, pero que sea de gratitud, porque el mundo es un lugar mucho más bonito simplemente porque tú caminas en él. Te admiro más de lo que las palabras pueden expresar, Diana Laura." "A veces, si guardas silencio, casi puedes escuchar el eco de la niña que fuiste... esa Diana que no se preocupaba por el mañana, que reía sin miedos y que veía el mundo como un lugar infinito. Da un poco de miedo, ¿verdad? Sentir cómo los años se nos escapan entre los dedos, ver cómo las personas cambian, cómo los lugares que amamos ya no son los mismos y cómo, poco a poco, nos toca aprender a caminar solas en un mundo que a veces parece demasiado frío.
+
+Sé que ha habido noches donde el cansancio te ha ganado, días donde te has preguntado si lo estás haciendo bien y momentos donde te has sentido pequeña frente a tantas responsabilidades. Pero hoy, al llegar a tus 23 años, quiero que te detengas un segundo y te mires con amor. No llores por el tiempo que se fue, llora de orgullo por la mujer en la que te has convertido. Porque a pesar de los golpes, de las decepciones y de las ausencias, aquí estás: floreciendo, luchando y demostrando que tu corazón es de acero, pero tu alma sigue siendo pura.
+
+No eres solo un número más, Diana Laura. Eres el resultado de cada lágrima que limpiaste en secreto y de cada vez que te levantaste cuando nadie te veía. Bienvenida a tus 23; un capítulo donde la niña que fuiste sonríe, porque sabe que está en las mejores manos: las tuyas."Parece que fue ayer cuando todo era más simple, ¿no? Da un poco de nostalgia ver cómo los años se nos escapan entre las manos, dejando atrás versiones de nosotros que ya no volverán. A veces duele crecer, duele sentir que el tiempo no perdona y que las responsabilidades pesan más cada día... <br><br>
+            Pero, <span class="highlight-text">¡mírate ahora!</span> A pesar de los días nublados y de las batallas que solo tú sabes que has peleado, aquí estás. Has florecido de una manera espectacular. <br><br>
+            Hoy, al cumplir <b>23 años</b>, no solo sumas un número, sumas sabiduría, belleza y una luz que ilumina a todos los que tenemos la suerte de conocerte. Deja atrás la tristeza de lo que fue y abraza con fuerza la alegría de lo que viene, porque te mereces lo mejor del mundo.<br><br>
+            <span style="color: var(--neon-pink); font-size: 16px; display: block; text-align: center;"><b>¡ERES INCREÍBLE, DIANA!</b></span><br>
+           A veces me detengo a pensar en lo rápido que pasó todo... Parece que fue ayer cuando éramos solo niños jugando sin saber que el tiempo se nos iba a escapar tan rápido de las manos. Diana, da un poco de miedo ver cómo esa niña que creció conmigo ahora es toda una mujer enfrentando el mundo. Me duele un poco el pecho darme cuenta de que ya no somos esos pequeños que no tenían preocupaciones, y que hoy la vida nos pone retos que a veces nos hacen querer volver atrás.
+
+Sé que has tenido días difíciles, de esos que te hacen sentir pequeña y sola, donde las lágrimas han sido tus únicas compañeras en silencio. Me quema no haber estado ahí para decirte que todo iba a estar bien, para recordarte lo valiosa que eres cuando tú misma lo olvidabas. Hoy cumples **23 años**, y aunque me carcome la impotencia de no poder estar ahí para abrazarte y celebrar que estás viva, quiero que sientas esto:
+
+Tu primo siempre va a estar para ti. No importa cuánta distancia haya, ni cuántos kilómetros nos separen hoy; mi apoyo es incondicional. Si te caes, yo te ayudo a levantarte; si lloras, aquí tienes mi hombro aunque sea a la distancia. Eres mi sangre, eres mi familia y verte crecer es el orgullo más grande que tengo.
+
+Llora si tienes que llorar, de nostalgia por lo que fue o de alegría por lo que viene, pero nunca olvides que nunca caminarás sola. Bienvenida a tus 23, prima. Perdóname por no estar físicamente, pero mi alma te está abrazando más fuerte que nunca.
+
+¡TE QUIERO MUCHO, PRIMA! 🎁✨ Ríe, baila y nunca dejes de ser esa mujer guerrera y única. ¡ESPERO QUE TE HAYA GUSTADO DIANITA ECHALE MUCHAS GANAS TE QUEREMOS VER TRIUNFAR ANIMO! 🎁✨
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 60 },
+                "color": { "value": "#f4a4a4" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3 },
+                "size": { "value": 2 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ff2d75", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1.5 }
+            }
+        });
+
+        function showGift() {
+            document.getElementById('main-card').style.opacity = '0';
+            document.getElementById('main-card').style.pointerEvents = 'none';
+            document.getElementById('surprise').style.display = 'block';
+
+            var duration = 7 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+
+            var interval = setInterval(function() {
+              var timeLeft = animationEnd - Date.now();
+              if (timeLeft <= 0) return clearInterval(interval);
+              var particleCount = 50 * (timeLeft / duration);
+              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        }
+    </script>
+</body>
+</html>
